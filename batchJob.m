@@ -1,3 +1,3 @@
-[Xopt] = ga(@(x)objectiveFunctionGabor(x, y, bw1, wt, theta, crTemplate, 2 ),60,[],[],[],[],lb,ub,[],intCon,options);
+[Xopt] = ga(@(x)objectiveFunctionGabor(x, ynoisyspeech, bw1, wt, theta, avgClean, 4), 240,[],[],[],[],lb,ub,[],intCon,options);
 
 

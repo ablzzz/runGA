@@ -1,0 +1,12 @@
+    function [R1 R2] = getPost(cr1, tsvd_map, dim, modelC, modelN)
+%cr1 = squeeze(mean(abs(cr),3));%%%%%%%%MISSING ABS%
+cr1= cr1 -tsvd_map.mean;
+cr1 = tmuln(cr1,tsvd_map.U{1}(:,:)',1);
+cr1 = tmuln(cr1,tsvd_map.U{2}(:,:)',2);
+cr1 = tmuln(cr1,tsvd_map.U{3}(:,:)',3);
+cr1=cr1(1:dim(1),1:dim(2), 1:dim(3));
+feat = cr1(:);
+data1 = unitseq(feat);
+[d R1] = modelC.posterior(data1');
+[d R2] = modelN.posterior(data1');
+%R = log(exp(-R1(1))/exp(-R1(2)));

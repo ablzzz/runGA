@@ -1,4 +1,4 @@
-function cr=aud2cor_gab(y,~,rv,sv,gab_filters)
+function cr=aud2cor_gab(y,rv,sv,gab_filters)
 
 % rv=[rv(:)' -1*rv(:)'];
 cr=zeros(length(sv),2*length(rv),size(y,1),size(y,2));
